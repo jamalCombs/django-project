@@ -28,7 +28,7 @@ urlpatterns = [
     path('', include('chat.urls')),
 
     # Courses
-    path('', include('courses.urls')),
+    path('courses/', include('courses.urls')),
 
     # Analytics
     path('', include('analytics.urls')),
