@@ -16,20 +16,21 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url, include
-
+from .views import home_page
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', home_page, name='home'),
 
     # Accounts
-    path('', include('accounts.urls')),
+    path(r'^accounts/', include('accounts.urls')),
     
     # Chat
-    path('', include('chat.urls')),
+    path(r'^chat/', include('chat.urls')),
 
     # Courses
     path('courses/', include('courses.urls')),
 
     # Analytics
-    path('', include('analytics.urls')),
+    path(r'^analytics/', include('analytics.urls')),
 ]
