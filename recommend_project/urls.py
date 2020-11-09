@@ -16,21 +16,24 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url, include
-from .views import home_page
+from .views import home_page, about_page
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home_page, name='home'),
+    path('about/', about_page, name='about'),
 
     # Accounts
-    path(r'^accounts/', include('accounts.urls')),
+    path('accounts/', include('accounts.urls')),
     
     # Chat
-    path(r'^chat/', include('chat.urls')),
+    path('chat/', include('chat.urls')),
 
     # Courses
     path('courses/', include('courses.urls')),
 
     # Analytics
-    path(r'^analytics/', include('analytics.urls')),
-]
+    path('analytics/', include('analytics.urls')),
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
