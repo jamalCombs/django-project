@@ -8,6 +8,25 @@ class CourseModelForm(forms.ModelForm):
             'title',
             'summary'
         ]
+        
+        labels = {
+            "title": '',
+            "summary": ''
+        }
+
+        widgets = {
+            'title': forms.TextInput(attrs={
+                'placeholder':'Title',
+                'class':'form-control'
+                }),
+
+            'summary': forms.Textarea(attrs={
+                'placeholder':'Description...',
+                'class':'form-control',
+                'rows':5,
+                'cols':1
+                })
+        }
 
     def save(self):
         new_course = Course.objects.create(

@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
-  <title>Courses</title>
+  <title>Recommend</title>
 
   <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/starter-template/">
 
@@ -35,13 +35,13 @@
       </a>
       <a class="py-2 d-none d-md-inline-block" href="{% url 'courses:course-list' %}">Courses</a>
       <a class="py-2 d-none d-md-inline-block" href="{% url 'about' %}">About</a>
-      <a class="py-2 d-none d-md-inline-block" href="{% url 'accounts:login' %}">Login</a>
+      <a class="py-2 d-none d-md-inline-block" href="{% url 'accounts:login' %}">Log In</a>
     </div>
   </nav>
 
   <main role="main" class="container">
     
-    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+    <div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
       {% block content %}
       {% endblock %}
     </div>

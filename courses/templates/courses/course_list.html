@@ -2,6 +2,11 @@
 
 {% block content %}
 <div>
-    <h1>Course List</h1>
+    <h1>Courses</h1>
+    {% for instance in object %}
+    <h3>{{ instance.title }}</h3>
+    <p>{{ instance.summary }}</p>
+
+    {% endfor %}
 </div>
 {% endblock %}
