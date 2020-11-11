@@ -26,7 +26,7 @@ urlpatterns = [
     path('about/', about_page, name='about'),
 
     # Accounts
-    path('accounts/', include('accounts.urls')),
+    path('account/', include('accounts.urls', namespace='account')),
     
     # Chat
     path('chat/', include('chat.urls')),
